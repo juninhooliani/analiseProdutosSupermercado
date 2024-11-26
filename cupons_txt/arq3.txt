@@ -1,0 +1,51 @@
+CASA DAS RACOES E PRODUTOS VETERINARIOS LTDA
+Endereço: RUA DUQUE DE CAXIAS, Nº 589 - Nao Informado
+Bairro: CENTRO -  CEP: 15900-017 -  TAQUARITINGA - SP
+ CNPJ:  58.667.981/0001-05  I.E.:  684019618113  I.M.: 
+--------------------------------------------------------------------------------------------------------------
+Extrato Nº: 561771
+CUPOM FISCAL ELETRÔNICO - SAT
+--------------------------------------------------------------------------------------------------------------
+CPF/CNPJ do Consumidor: 318.947.218-10
+Razão Social/ Nome: XXX
+--------------------------------------------------------------------------------------------------------------
+#	COD	DESCRIÇÃO	QTD	UN	VL UN R$	(VL TR R$)*	VL ITEM R$
+1	7898049719433	SIMPARIC 80 MG 20 A 40 KG	1,0000	1	X89,90	(0,00)	89,90
+Rateio de desconto sobre o subtotal:
+- 5,28
+
+2	7891106909235	ADVOCATE GATOS 4 A 8 KG	1,0000	1	X71,80	(0,00)	71,80
+Rateio de desconto sobre o subtotal:
+- 4,22
+
+3	3037	PREDIDERM 20 MG 1 CP (DERMACORTEN)	4,0000	1	X3,40	(0,00)	13,60
+Rateio de desconto sobre o subtotal:
+- 0,80
+
+
+Total bruto de Itens
+175,30
+Total de descontos/ acréscimos sobre o item
+0,00
+Desconto sobre o Subtotal
+- 10,30
+TOTAL R$
+165,00
+
+Cartão de Débito165,00
+Troco R$:0,00
+Comete crime quem sonega
+--------------------------------------------------------------------------------------------------------------
+OBSERVAÇÕES DO CONTRIBUINTE
+- Operador: 6 RE, RO E SA;
+
+*Valor aproximado dos tributos do item
+
+Valor aproximado dos tributos deste cupom R$
+44,61
+
+(conforme Lei Fed. 12.741/2012)
+--------------------------------------------------------------------------------------------------------------
+SAT Nº 000259022-02
+29/12/2023 - 11:40:12
+3523 1258 6679 8100 0105 5900 0259 0225 6177 1847 5270

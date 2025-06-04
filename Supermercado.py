@@ -103,10 +103,14 @@ def processar_cupom(cupom_texto):
 
 def atualizar_planilha(dados, arquivo_excel):
     """Atualiza a planilha Excel com os dados fornecidos."""
-    # Limpa a planilha existente
+    # Carrega a planilha existente se houver
     try:
-        df_existente = pd.DataFrame()  # Cria uma planilha vazia
-    except Exception:
+        if os.path.exists(arquivo_excel):
+            df_existente = pd.read_excel(arquivo_excel, engine='openpyxl')
+        else:
+            df_existente = pd.DataFrame()
+    except Exception as e:
+        print(f"Erro ao ler {arquivo_excel}: {e}")
         df_existente = pd.DataFrame()
 
     # Converte para DataFrame os dados novos

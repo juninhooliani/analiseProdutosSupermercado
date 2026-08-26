@@ -65,9 +65,39 @@ cd web_app && npm run dev   # http://localhost:3000
    usando **GTIN como chave de normalização de produto**.
 5. Construir o dashboard do `web_app` sobre esse banco.
 
-## 6. Pendência de segurança
+## 6. Higiene de dados no repositório
 
-O `.env` (com `OPENAI_API_KEY`) está no commit `87dd921`, que ainda **não foi
-enviado** ao GitHub — e o repositório é público. Já foram criados o `.gitignore`
-e feito `git rm --cached .env`, mas **o blob continua no histórico local**.
-Não faça `git push` antes de limpar o histórico ou rotacionar a chave.
+O repositório é **público**. O histórico local foi reescrito para remover
+dados sensíveis e está pronto para ser publicado com `--force-with-lease`.
+
+O que foi removido do histórico versionado:
+
+| Item | Situação anterior | Agora |
+|---|---|---|
+| `.env` (`OPENAI_API_KEY`) | commitado localmente, **nunca publicado** | fora do histórico e no `.gitignore` |
+| `cupons_txt/*.txt` (contêm CPF) | **publicados** no GitHub desde "Add files via upload" | purgados de todo o histórico do `main` |
+| `compras.xlsx` (histórico de compras) | commitado localmente | ignorado |
+| CPF hardcoded em `LErCUpomTexto.py` | commitado localmente | mascarado como `000.000.000-00` |
+
+Verificação: varredura de todos os blobs alcançáveis pelo `main` não encontra
+nenhum CPF real nem chave de API.
+
+### Regras permanentes
+
+- **Nunca** versionar `cupons_txt/`, `XMLs/*.xml`, `compras.xlsx`, `certs/` ou `.env`.
+  As pastas ficam no repositório vazias, com `.gitkeep`.
+- Cupons de exemplo dentro de código devem usar CPF fictício (`000.000.000-00`)
+  e razão social genérica.
+
+### Refs locais que NÃO devem ser publicados
+
+`refs/original/refs/heads/main` e a tag `backup-antes-limpeza` ainda contêm os
+objetos antigos, de propósito, como rede de segurança. Um `git push` normal não
+os leva — mas **nunca** use `git push --tags` nem `git push --mirror` aqui.
+Para descartá-los depois de confirmar que está tudo certo:
+
+```bash
+git update-ref -d refs/original/refs/heads/main
+git tag -d backup-antes-limpeza
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+```

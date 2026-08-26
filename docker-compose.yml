@@ -1,0 +1,19 @@
+# Ambiente de coleta - ver wiki/08_AMBIENTE_DOCKER.md
+# Uso:  docker compose run --rm sonda /certs/certificado.pfx
+services:
+  sonda:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: supermercado-coleta:latest
+    # stdin_open + tty: o getpass precisa de terminal para nao ecoar a senha
+    stdin_open: true
+    tty: true
+    volumes:
+      # Codigo do projeto (edicoes no host valem na hora, sem rebuild)
+      - .:/app
+      # Certificado montado SOMENTE LEITURA. O .pfx nunca entra na imagem.
+      - ./certs:/certs:ro
+    environment:
+      - TZ=America/Sao_Paulo
+    entrypoint: ["python", "sonda_nfp.py"]

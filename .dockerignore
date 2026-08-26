@@ -1,0 +1,17 @@
+# O certificado NUNCA vai para o contexto de build. Ele entra so como volume.
+certs/
+*.pfx
+*.p12
+*.pem
+*.key
+
+.git/
+.venv/
+__pycache__/
+*.pyc
+web_app/node_modules/
+web_app/.next/
+.env
+analises/
+XMLs/
+cupons_txt/

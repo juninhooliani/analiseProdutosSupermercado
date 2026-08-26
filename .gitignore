@@ -1,0 +1,32 @@
+# ---- SEGREDOS: nunca versionar ----
+certs/
+*.pfx
+*.p12
+*.pem
+*.key
+.env
+
+# ---- DADOS PESSOAIS ----
+# Cupons contem CPF do titular e dados de terceiros. Repositorio e publico:
+# a pasta e versionada vazia, o conteudo fica so na maquina local.
+cupons_txt/*
+!cupons_txt/.gitkeep
+compras.xlsx
+analises/
+XMLs/*
+!XMLs/.gitkeep
+*.db
+
+# ---- Python ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---- Node / Next.js ----
+web_app/node_modules/
+web_app/.next/
+web_app/out/
+
+# ---- Scratch ----
+scratch_*.png

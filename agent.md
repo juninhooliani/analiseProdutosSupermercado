@@ -57,13 +57,15 @@ cd web_app && npm run dev   # http://localhost:3000
 ```
 
 ## 5. Próximos Passos
-1. **Executar `sonda_nfp.py`** e interpretar a saída conforme a tabela da seção 4
-   de `wiki/07_COLETA_ECPF.md`. Tudo depende desse resultado.
-2. Implementar a listagem de chaves de acesso por período.
-3. Implementar o download do XML por chave.
-4. Criar `banco_compras.db` (SQLite) conforme `wiki/02_DATA_MODEL.md`,
-   usando **GTIN como chave de normalização de produto**.
-5. Construir o dashboard do `web_app` sobre esse banco.
+
+> **Há tarefas pendentes de execução.** Ver `HANDOFF_AGENTE_LOCAL.md` — contém
+> os dois comandos que precisam rodar em terminal com rede (publicar o histórico
+> limpo e executar a sonda de coleta), com as verificações e os limites de cada um.
+
+1. **Sonda NFP Executada (`sonda_nfp.py`)**: Concluída. Resultado: a NFP redireciona requisições mTLS puras para a tela de login (`login.aspx` / gov.br). O plano B suportado é a automação via **Playwright utilizando o certificado e-CPF instalado no navegador (com a política `AutoSelectCertificateForUrls`)**.
+2. Criar `banco_compras.db` (SQLite) conforme `wiki/02_DATA_MODEL.md`, usando **GTIN como chave de normalização de produto**.
+3. Construir o parser de XMLs e a ingestão no banco de dados.
+4. Construir o dashboard do `web_app` sobre esse banco.
 
 ## 6. Higiene de dados no repositório
 
